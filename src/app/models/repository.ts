@@ -1,48 +1,26 @@
+import { Contact } from "./contact.model";
 import { Component, OnInit } from '@angular/core';
 import { Contacts } from '@capacitor-community/contacts';
-import { Contact } from '../models/contact.model';
-import { Repository } from '../models/repository';
 // import { ContactDetailPage } from '../contact-detail/contact-detail.page';
 import { RefresherCustomEvent } from '@ionic/angular';
 import { ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
 import { Router } from '@angular/router';
 
-
-
-@Component({
-  selector: 'app-home',
-  templateUrl: 'home.page.html',
-  styleUrls: ['home.page.scss'],
-})
-export class HomePage implements OnInit {
-
-  constructor(private repo: Repository , private router: Router) {
+export interface User {
+    login: string;
+    password: string;
   }
 
-  get contt(){
-    return this.repo.contacts;
-  }
-  
+export class Repository  {
+    constructor() {
+        this.getContacts();
+        
 
-  contacts: any[] =[];
+}
 
-
-  ngOnInit(): void {
-
-    this.getContacts();
-
-  }
-
-  selectContact(contactId: string) {
-
-
-    
-    this.router.navigate(['/contact', contactId]);
-    // this.router.navigate(['/auth',]);
-  }
-
-
-  async getContacts(){
+contacts: any[] = [];
+cont:Contact | undefined;
+async getContacts(){
     try{
       const permission = await Contacts.requestPermissions();
       console.log ('permission:', permission.contacts);
@@ -71,8 +49,35 @@ export class HomePage implements OnInit {
 
   }
 
+  public users: User[] = [
+    {
+      login:"Erasyl" , 
+      password:"12345"
+    } , 
+    {
+      login:"admin" , 
+      password:"admin"
+    } , 
+    {
+      login:"User1" , 
+      password:"12345"
+    } , 
+    {
+      login:"User2" , 
+      password:"12345"
+    } , 
+    {
+      login:"User3" , 
+      password:"12345"
+    } , 
+    {
+      login:"User4" , 
+      password:"12345"
+    } , 
+  ]
 
-
-
+  public getUsers(): User[] {
+    return this.users;
+  }
 
 }
