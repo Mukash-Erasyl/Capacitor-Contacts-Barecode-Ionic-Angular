@@ -3,8 +3,10 @@ import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
 import { FormsModule } from '@angular/forms';
 import { HomePage } from './home.page';
-
+import { Repository } from '../models/repository';
 import { HomePageRoutingModule } from './home-routing.module';
+// import { ContactDetailPageModule } from '../contact-detail/contact-detail.module';
+
 
 
 @NgModule({
@@ -12,8 +14,10 @@ import { HomePageRoutingModule } from './home-routing.module';
     CommonModule,
     FormsModule,
     IonicModule,
+    
     HomePageRoutingModule
   ],
-  declarations: [HomePage]
+  declarations: [HomePage ] ,
+  providers:[Repository],
 })
 export class HomePageModule {}
