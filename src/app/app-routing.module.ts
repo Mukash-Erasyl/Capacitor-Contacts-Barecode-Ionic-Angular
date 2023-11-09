@@ -23,6 +23,10 @@ const routes: Routes = [
     path: 'contact-detail',
     loadChildren: () => import('./contact-detail/contact-detail.module').then( m => m.ContactDetailPageModule)
   },
+  {
+    path: 'qr',
+    loadChildren: () => import('./qr/qr.module').then( m => m.QrPageModule)
+  },
 
  
  
