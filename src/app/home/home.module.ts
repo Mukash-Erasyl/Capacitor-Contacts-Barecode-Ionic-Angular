@@ -5,7 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { HomePage } from './home.page';
 import { Repository } from '../models/repository';
 import { HomePageRoutingModule } from './home-routing.module';
-// import { ContactDetailPageModule } from '../contact-detail/contact-detail.module';
+import { ContactDetailPageModule } from '../contact-detail/contact-detail.module';
 
 
 

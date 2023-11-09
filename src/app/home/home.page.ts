@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Contacts } from '@capacitor-community/contacts';
 import { Contact } from '../models/contact.model';
 import { Repository } from '../models/repository';
-// import { ContactDetailPage } from '../contact-detail/contact-detail.page';
+import { ContactDetailPage } from '../contact-detail/contact-detail.page';
 import { RefresherCustomEvent } from '@ionic/angular';
 import { ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
 import { Router } from '@angular/router';
