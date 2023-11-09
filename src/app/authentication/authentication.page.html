@@ -1,0 +1,52 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Авторизация</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title *ngIf="!loginFlag" class="ionTitle">Войти</ion-title>
+      <ion-title *ngIf="loginFlag" class="ionTitle">Зарегистрироваться</ion-title>
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="/home"></ion-back-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content *ngIf="!loginFlag">
+    <!-- Поля ввода для имени пользователя и пароля -->
+    <ion-item>
+      <ion-label position="floating">Имя пользователя</ion-label>
+      <ion-input [(ngModel)]="username" type="text"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Пароль</ion-label>
+      <ion-input [(ngModel)]="password" type="password"></ion-input>
+    </ion-item>
+    <ion-button expand="full" (click)="authenticate()">Войти</ion-button>
+    <div class="authClass" (click)="flagChange()">Зарегистрироваться</div>
+    <ion-item class="accessRefuse" *ngIf="authFlag">
+      Такой пользователь не найден !!!
+    </ion-item>
+  </ion-content>
+
+
+  <ion-content *ngIf="loginFlag">
+    <!-- Поля ввода для имени пользователя и пароля -->
+    <ion-item>
+      <ion-label position="floating">Имя пользователя</ion-label>
+      <ion-input [(ngModel)]="username" type="text"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Пароль</ion-label>
+      <ion-input [(ngModel)]="password" type="password"></ion-input>
+    </ion-item>
+    <ion-button expand="full" (click)="registration()">Зарегистрироваться</ion-button>
+    <div class="authClass" (click)="flagChange()">Войти</div>
+
+  </ion-content>
+</ion-content>

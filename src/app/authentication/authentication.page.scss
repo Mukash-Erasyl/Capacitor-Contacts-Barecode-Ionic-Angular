@@ -1,0 +1,19 @@
+.authClass{
+    
+    text-align: center;
+    transition: .3s;
+}
+.authClass:hover{
+    color: red;
+}
+
+
+.ionTitle {
+    font-size: 18px;
+    font-weight:700;
+}
+
+.accessRefuse {
+    color: red; /* Цвет текста ошибки */
+    font-size: 14px;
+}

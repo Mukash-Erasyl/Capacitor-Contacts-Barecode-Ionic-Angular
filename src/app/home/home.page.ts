@@ -38,7 +38,7 @@ export class HomePage implements OnInit {
 
     
     this.router.navigate(['/contact', contactId]);
-    // this.router.navigate(['/auth',]);
+    // this.router.navigate(['/authentication',]);
   }
 
 

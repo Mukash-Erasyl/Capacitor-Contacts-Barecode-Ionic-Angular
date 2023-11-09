@@ -6,15 +6,13 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [style.visibility]="content_visibility">
+<ion-content class="mainContent" [style.visibility]="content_visibility">
 <ion-button expand="block" class="ion-margin" (click)="startScan()">Начать сканирование QR</ion-button>
 
 <ion-item *ngIf="scannedResult">
   <ion-label class="ion-text-wrap">Результат сканирования : {{scannedResult}}</ion-label>
 </ion-item>
-<ion-item routerLink="/home">
-  <ion-label class="ion-text-wrap">Назад</ion-label>
-</ion-item>
+  <ion-label routerLink="/home" class="Back">Назад</ion-label>
 
 
 </ion-content>

@@ -6,7 +6,7 @@ import { Contact } from './models/contact.model';
 const routes: Routes = [
     {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'authentication',
     pathMatch: 'full'
   },
   {
@@ -26,6 +26,10 @@ const routes: Routes = [
   {
     path: 'qr',
     loadChildren: () => import('./qr/qr.module').then( m => m.QrPageModule)
+  },
+  {
+    path: 'authentication',
+    loadChildren: () => import('./authentication/authentication.module').then( m => m.AuthenticationPageModule)
   },
 
  
